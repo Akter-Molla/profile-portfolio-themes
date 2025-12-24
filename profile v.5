@@ -69,6 +69,44 @@ section {
   margin: 0 !important;
 }
 
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  box-shadow: var(--shadow-hover);
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  display: flex;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 35px rgba(108, 99, 255, 0.4);
+}
+
+.scroll-to-top:active {
+  transform: translateY(0);
+}
+
 /* Blog Post Page Specific Styles */
 .blog-post-page {
   background: var(--darker);
@@ -1732,6 +1770,14 @@ textarea.form-control {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+  
+  /* Adjust scroll to top button for mobile */
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1874,6 +1920,15 @@ textarea.form-control {
     width: 60px;
     height: 60px;
   }
+  
+  /* Adjust scroll to top button for small screens */
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 
 /* Loading Spinner */
@@ -1982,6 +2037,12 @@ textarea.form-control {
   .form-control::placeholder {
     color: rgba(15, 23, 42, 0.5);
   }
+  
+  /* Adjust scroll to top button for light mode */
+  .scroll-to-top {
+    background: var(--gradient-primary);
+    color: var(--white);
+  }
 }
 
 /* Print Styles */
@@ -1991,7 +2052,8 @@ textarea.form-control {
   .contact-section,
   .social-links-large,
   .menu-toggle,
-  .nav-menu {
+  .nav-menu,
+  .scroll-to-top {
     display: none !important;
   }
   
@@ -2034,6 +2096,11 @@ textarea.form-control {
       </div>
     </div>
   </div>
+
+  <!-- Scroll to Top Button -->
+  <button aria-label='Scroll to top' class='scroll-to-top' id='scrollToTop'>
+    <i class='fas fa-chevron-up'/>
+  </button>
 
   <!-- Header -->
   <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='yes'>
@@ -3001,6 +3068,7 @@ textarea.form-control {
         </b:includable>
       </b:widget>
     </b:section>
+
 
 <!-- Profiles Section -->
     <b:section class='profiles-section' id='profiles' showaddelement='yes'>
@@ -5900,6 +5968,35 @@ textarea.form-control {
     });
   }
 
+  // Scroll to Top functionality
+  function initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    if (!scrollToTopBtn) return;
+    
+    // Show/hide button based on scroll position
+    function toggleScrollToTop() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    }
+    
+    // Scroll to top when clicked
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', toggleScrollToTop);
+    
+    // Initial check
+    toggleScrollToTop();
+  }
+
   // Initialize everything
   function init() {
     try {
@@ -5910,6 +6007,7 @@ textarea.form-control {
       initOutsideClick();
       initContactForm();
       initNewsletterForm();
+      initScrollToTop();
     } catch (error) {
       console.error('Initialization error:', error);
     }
