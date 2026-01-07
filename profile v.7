@@ -619,7 +619,7 @@ a:hover {
 
 .search-container-wrapper-full .search-input {
   width: 100%;
-  padding: 10px 10px 14px 40px !important;
+  padding: 10px 20px 14px 45px !important;
   background: rgba(15, 23, 42, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
@@ -3174,11 +3174,45 @@ textarea.form-control {
     <b:widget-settings>
       <b:widget-setting name='content'><![CDATA[<div class="profiles-section">
   <div class="container">
+    <!-- Section Header -->
     <div class="section-header">
       <h2>Connect With Me</h2>
       <p class="section-subtitle">Explore my digital presence across various platforms. Each card reveals more details on hover.</p>
     </div>
     
+    <!-- Search Container - Now below subtitle and above profiles -->
+    <div class="search-container-wrapper-full">
+      <div class="search-header">
+        <h3>Find Profiles</h3>
+        <p>Search by name, platform, or type</p>
+      </div>
+      
+      <div class="search-wrapper">
+        <div class="search-box">
+          <div class="search-input-wrapper">
+            <input type="text" class="search-input" id="profileSearch" placeholder="Search profiles..." />
+            <i class="fas fa-search search-icon"></i>
+          </div>
+          <button class="btn btn-primary search-btn" id="searchButton">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+        
+        <div class="search-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="social">Social</button>
+          <button class="filter-btn" data-filter="professional">Professional</button>
+          <button class="filter-btn" data-filter="development">Dev</button>
+          <button class="filter-btn" data-filter="blog">Blog</button>
+        </div>
+        
+        <div class="search-stats">
+          <span id="visibleCount" class="highlight">8</span>/<span id="totalCount" class="highlight">8</span> shown
+        </div>
+      </div>
+    </div>
+    
+    <!-- Profile Grid - Always 4 columns layout -->
     <div class="profile-grid" id="profileGrid">
       <!-- GitHub Profile - Development -->
       <div class="profile-card" data-platform="github" data-type="development" data-name="github">
@@ -3327,8 +3361,8 @@ textarea.form-control {
         </div>
       </div>
       
-      <!-- Instagram Profile - Social -->
-      <div class="profile-card" data-platform="instagram" data-type="social" data-name="instagram">
+      <!-- Instagram Profile - Visual -->
+      <div class="profile-card" data-platform="instagram" data-type="visual" data-name="instagram">
         <div class="profile-card-inner">
           <div class="profile-card-front">
             <div class="profile-header">
@@ -3523,7 +3557,7 @@ textarea.form-control {
         </div>
       </div>
       
-      <!-- Blogger Profiles (all marked as blog type) -->
+      <!-- Blogger Profile - Blog -->
       <div class="profile-card" data-platform="blogger" data-type="blog" data-name="tech blog">
         <div class="profile-card-inner">
           <div class="profile-card-front">
@@ -3571,8 +3605,6 @@ textarea.form-control {
           </div>
         </div>
       </div>
-      
-      <!-- More profiles can be added here following the same pattern -->
     </div>
     
     <!-- No Results Message -->
