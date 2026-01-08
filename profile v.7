@@ -4,8 +4,7 @@
 <head>
   <b:include data='blog' name='all-head-content'/>
   <title><data:blog.pageTitle/></title>
-  
-  <b:skin><![CDATA[
+<b:skin><![CDATA[
 /* CSS Variables - Dark Modern Theme */
 :root {
   --primary: #6C63FF;
@@ -424,9 +423,9 @@ a:hover {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  align-items: center;
+  grid-template-columns: 70% 30%;
+  gap: 20px;   /* optional spacing */
+  align-items: left;
   color: var(--white);
 }
 
@@ -436,7 +435,7 @@ a:hover {
 
 .hero-text h1 {
   font-size: 3.5rem;
-  line-height: 1;
+  line-height: 1.5;
   margin-bottom: 1.5rem;
   background: linear-gradient(45deg, var(--white), var(--secondary));
   -webkit-background-clip: text;
@@ -447,8 +446,8 @@ a:hover {
 .hero-text .subtitle {
   font-size: 1.25rem;
   color: var(--text-muted);
-  margin-bottom: 2.5rem;
-  line-height: 1.6;
+  margin-bottom: 2rem;
+  line-height: 1;
 }
 
 .hero-btns {
@@ -500,7 +499,7 @@ a:hover {
 .profile-image-wrapper {
   width: 100%;
   max-width: 400px;
-  height: 400px;
+  height: 430px;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
@@ -533,12 +532,12 @@ a:hover {
 /* Section Styling */
 .section-header {
   text-align: center;
-  margin-bottom: 2.5rem !important;
+  margin-bottom:5 px;
 }
 
 .section-header h2 {
   font-size: 2.8rem;
-  margin-bottom: 1rem;
+  margin-bottom:.5 rem;
   position: relative;
   display: inline-block;
 }
@@ -549,8 +548,8 @@ a:hover {
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
+  width: 400px;
+  height: 2px;
   background: var(--gradient-primary);
   border-radius: 2px;
 }
@@ -558,15 +557,15 @@ a:hover {
 .section-subtitle {
   color: var(--text-muted);
   max-width: 600px;
-  margin: 1rem auto 0;
-  font-size: 1.1rem;
+  margin: .5rem auto 0;
+  font-size: 1rem;
 }
 
 /* Full Width Search Container */
 .search-container-wrapper-full {
   background: rgba(30, 41, 59, 0.8);
   border-radius: var(--radius);
-  padding: 15px !important;
+  padding: 10px !important;
   border: 1px solid rgba(255, 255, 255, 0.1);
   width: 100% !important;
   max-width: 100% !important;
@@ -578,12 +577,12 @@ a:hover {
 
 .search-container-wrapper-full .search-header {
   text-align: center;
-  margin-bottom: 10px !important;
+  margin-bottom: 5px !important;
 }
 
 .search-container-wrapper-full .search-header h3 {
   color: var(--text-light);
-  font-size: 1.5rem !important;
+  font-size: 1rem !important;
   margin-bottom: 8px;
   text-align: center;
 }
@@ -593,7 +592,7 @@ a:hover {
   font-size: 1rem !important;
   margin-bottom: 0 !important;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1;
 }
 
 .search-container-wrapper-full .search-wrapper {
@@ -664,11 +663,11 @@ a:hover {
   gap: 10px !important;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 10px !important;
+  margin-top: 5px !important;
 }
 
 .search-container-wrapper-full .filter-btn {
-  padding: 10px 20px !important;
+  padding: 10px 10px !important;
   background: rgba(15, 23, 42, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px !important;
@@ -1912,13 +1911,13 @@ textarea.form-control {
   }
   
   .profile-image-container {
-    order: 1;
-    padding-left: 0;
+    order: 2;
+    padding-left: 20px;
   }
   
   .profile-image-wrapper {
-    max-width: 350px;
-    height: 350px;
+    max-width: 450px;
+    height: 500px;
     margin: 0 auto;
   }
   
@@ -3129,7 +3128,7 @@ textarea.form-control {
               <div class='hero-content'>
                 <div class='hero-text'>
                   <h1>Welcome to My Digital Hub</h1>
-                  <p class='subtitle'>Explore my online presence, projects, and content all in one place. Manage everything from the dashboard.</p>
+                  <p class='subtitle'>Explore my online presence, projects, and content all in one place.</p>
                   
                   <div class='social-stats'>
                     <div class='stat-item'>
@@ -3177,14 +3176,13 @@ textarea.form-control {
     <!-- Section Header -->
     <div class="section-header">
       <h2>Connect With Me</h2>
-      <p class="section-subtitle">Explore my digital presence across various platforms. Each card reveals more details on hover.</p>
+      <p class="section-subtitle">Explore my digital presence across various platforms</p>
     </div>
     
     <!-- Search Container - Now below subtitle and above profiles -->
     <div class="search-container-wrapper-full">
       <div class="search-header">
-        <h3>Find Profiles</h3>
-        <p>Search by name, platform, or type</p>
+        <h3>Find Profiles</h3><p>Search by name, platform, or type</p>
       </div>
       
       <div class="search-wrapper">
@@ -3204,10 +3202,9 @@ textarea.form-control {
           <button class="filter-btn" data-filter="professional">Professional</button>
           <button class="filter-btn" data-filter="development">Dev</button>
           <button class="filter-btn" data-filter="blog">Blog</button>
-        </div>
-        
-        <div class="search-stats">
+		  <div class="search-stats">
           <span id="visibleCount" class="highlight">8</span>/<span id="totalCount" class="highlight">8</span> shown
+        </div>
         </div>
       </div>
     </div>
@@ -3263,6 +3260,589 @@ textarea.form-control {
         </div>
       </div>
       
+      <!-- Twitter Profile - Social -->
+      <div class="profile-card" data-platform="twitter" data-type="social" data-name="twitter">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo twitter-logo">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="profile-badge">Social</div>
+            </div>
+            <h3 class="profile-name">Twitter</h3>
+            <p class="profile-username">@yourhandle</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">15K</div>
+                <div class="profile-stat-label">Followers</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">1.2K</div>
+                <div class="profile-stat-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Daily Thoughts</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">15K</div>
+                <div class="metric-label">Followers</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">1.2K</div>
+                <div class="metric-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Follow for tech insights, industry news, and daily thoughts on technology.</p>
+            </div>
+            <a class="btn btn-primary" href="https://twitter.com/yourhandle" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- LinkedIn Profile - Professional -->
+      <div class="profile-card" data-platform="linkedin" data-type="professional" data-name="linkedin">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo linkedin-logo">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div class="profile-badge">Professional</div>
+            </div>
+            <h3 class="profile-name">LinkedIn</h3>
+            <p class="profile-username">Your Name</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">500+</div>
+                <div class="profile-stat-label">Connections</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">120</div>
+                <div class="profile-stat-label">Endorsements</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Professional Network</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">500+</div>
+                <div class="metric-label">Connections</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">120</div>
+                <div class="metric-label">Skills</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Connect professionally and explore my career journey, skills, and achievements.</p>
+            </div>
+            <a class="btn btn-primary" href="https://linkedin.com/in/yourname" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      
+<!-- Twitter Profile - Social -->
+      <div class="profile-card" data-platform="twitter" data-type="social" data-name="twitter">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo twitter-logo">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="profile-badge">Social</div>
+            </div>
+            <h3 class="profile-name">Twitter</h3>
+            <p class="profile-username">@yourhandle</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">15K</div>
+                <div class="profile-stat-label">Followers</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">1.2K</div>
+                <div class="profile-stat-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Daily Thoughts</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">15K</div>
+                <div class="metric-label">Followers</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">1.2K</div>
+                <div class="metric-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Follow for tech insights, industry news, and daily thoughts on technology.</p>
+            </div>
+            <a class="btn btn-primary" href="https://twitter.com/yourhandle" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- LinkedIn Profile - Professional -->
+      <div class="profile-card" data-platform="linkedin" data-type="professional" data-name="linkedin">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo linkedin-logo">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div class="profile-badge">Professional</div>
+            </div>
+            <h3 class="profile-name">LinkedIn</h3>
+            <p class="profile-username">Your Name</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">500+</div>
+                <div class="profile-stat-label">Connections</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">120</div>
+                <div class="profile-stat-label">Endorsements</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Professional Network</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">500+</div>
+                <div class="metric-label">Connections</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">120</div>
+                <div class="metric-label">Skills</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Connect professionally and explore my career journey, skills, and achievements.</p>
+            </div>
+            <a class="btn btn-primary" href="https://linkedin.com/in/yourname" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Twitter Profile - Social -->
+      <div class="profile-card" data-platform="twitter" data-type="social" data-name="twitter">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo twitter-logo">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="profile-badge">Social</div>
+            </div>
+            <h3 class="profile-name">Twitter</h3>
+            <p class="profile-username">@yourhandle</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">15K</div>
+                <div class="profile-stat-label">Followers</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">1.2K</div>
+                <div class="profile-stat-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Daily Thoughts</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">15K</div>
+                <div class="metric-label">Followers</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">1.2K</div>
+                <div class="metric-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Follow for tech insights, industry news, and daily thoughts on technology.</p>
+            </div>
+            <a class="btn btn-primary" href="https://twitter.com/yourhandle" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- LinkedIn Profile - Professional -->
+      <div class="profile-card" data-platform="linkedin" data-type="professional" data-name="linkedin">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo linkedin-logo">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div class="profile-badge">Professional</div>
+            </div>
+            <h3 class="profile-name">LinkedIn</h3>
+            <p class="profile-username">Your Name</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">500+</div>
+                <div class="profile-stat-label">Connections</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">120</div>
+                <div class="profile-stat-label">Endorsements</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Professional Network</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">500+</div>
+                <div class="metric-label">Connections</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">120</div>
+                <div class="metric-label">Skills</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Connect professionally and explore my career journey, skills, and achievements.</p>
+            </div>
+            <a class="btn btn-primary" href="https://linkedin.com/in/yourname" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Twitter Profile - Social -->
+      <div class="profile-card" data-platform="twitter" data-type="social" data-name="twitter">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo twitter-logo">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="profile-badge">Social</div>
+            </div>
+            <h3 class="profile-name">Twitter</h3>
+            <p class="profile-username">@yourhandle</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">15K</div>
+                <div class="profile-stat-label">Followers</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">1.2K</div>
+                <div class="profile-stat-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Daily Thoughts</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">15K</div>
+                <div class="metric-label">Followers</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">1.2K</div>
+                <div class="metric-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Follow for tech insights, industry news, and daily thoughts on technology.</p>
+            </div>
+            <a class="btn btn-primary" href="https://twitter.com/yourhandle" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- LinkedIn Profile - Professional -->
+      <div class="profile-card" data-platform="linkedin" data-type="professional" data-name="linkedin">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo linkedin-logo">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div class="profile-badge">Professional</div>
+            </div>
+            <h3 class="profile-name">LinkedIn</h3>
+            <p class="profile-username">Your Name</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">500+</div>
+                <div class="profile-stat-label">Connections</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">120</div>
+                <div class="profile-stat-label">Endorsements</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Professional Network</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">500+</div>
+                <div class="metric-label">Connections</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">120</div>
+                <div class="metric-label">Skills</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Connect professionally and explore my career journey, skills, and achievements.</p>
+            </div>
+            <a class="btn btn-primary" href="https://linkedin.com/in/yourname" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Twitter Profile - Social -->
+      <div class="profile-card" data-platform="twitter" data-type="social" data-name="twitter">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo twitter-logo">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="profile-badge">Social</div>
+            </div>
+            <h3 class="profile-name">Twitter</h3>
+            <p class="profile-username">@yourhandle</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">15K</div>
+                <div class="profile-stat-label">Followers</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">1.2K</div>
+                <div class="profile-stat-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Daily Thoughts</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">15K</div>
+                <div class="metric-label">Followers</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">1.2K</div>
+                <div class="metric-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Follow for tech insights, industry news, and daily thoughts on technology.</p>
+            </div>
+            <a class="btn btn-primary" href="https://twitter.com/yourhandle" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- LinkedIn Profile - Professional -->
+      <div class="profile-card" data-platform="linkedin" data-type="professional" data-name="linkedin">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo linkedin-logo">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div class="profile-badge">Professional</div>
+            </div>
+            <h3 class="profile-name">LinkedIn</h3>
+            <p class="profile-username">Your Name</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">500+</div>
+                <div class="profile-stat-label">Connections</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">120</div>
+                <div class="profile-stat-label">Endorsements</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Professional Network</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">500+</div>
+                <div class="metric-label">Connections</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">120</div>
+                <div class="metric-label">Skills</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Connect professionally and explore my career journey, skills, and achievements.</p>
+            </div>
+            <a class="btn btn-primary" href="https://linkedin.com/in/yourname" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Twitter Profile - Social -->
+      <div class="profile-card" data-platform="twitter" data-type="social" data-name="twitter">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo twitter-logo">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="profile-badge">Social</div>
+            </div>
+            <h3 class="profile-name">Twitter</h3>
+            <p class="profile-username">@yourhandle</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">15K</div>
+                <div class="profile-stat-label">Followers</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">1.2K</div>
+                <div class="profile-stat-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Daily Thoughts</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">15K</div>
+                <div class="metric-label">Followers</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">1.2K</div>
+                <div class="metric-label">Tweets</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Follow for tech insights, industry news, and daily thoughts on technology.</p>
+            </div>
+            <a class="btn btn-primary" href="https://twitter.com/yourhandle" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- LinkedIn Profile - Professional -->
+      <div class="profile-card" data-platform="linkedin" data-type="professional" data-name="linkedin">
+        <div class="profile-card-inner">
+          <div class="profile-card-front">
+            <div class="profile-header">
+              <div class="profile-logo linkedin-logo">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div class="profile-badge">Professional</div>
+            </div>
+            <h3 class="profile-name">LinkedIn</h3>
+            <p class="profile-username">Your Name</p>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-number">500+</div>
+                <div class="profile-stat-label">Connections</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-number">120</div>
+                <div class="profile-stat-label">Endorsements</div>
+              </div>
+            </div>
+            <div class="profile-cta">
+              <span class="cta-text">View details</span>
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+          <div class="profile-card-back">
+            <h4>Professional Network</h4>
+            <div class="profile-metrics">
+              <div class="metric">
+                <div class="metric-value">500+</div>
+                <div class="metric-label">Connections</div>
+              </div>
+              <div class="metric">
+                <div class="metric-value">120</div>
+                <div class="metric-label">Skills</div>
+              </div>
+            </div>
+            <div class="profile-description">
+              <p>Connect professionally and explore my career journey, skills, and achievements.</p>
+            </div>
+            <a class="btn btn-primary" href="https://linkedin.com/in/yourname" rel="noopener" target="_blank">
+              <i class="fas fa-external-link-alt"></i> Visit Profile
+            </a>
+          </div>
+        </div>
+      </div>
       <!-- Twitter Profile - Social -->
       <div class="profile-card" data-platform="twitter" data-type="social" data-name="twitter">
         <div class="profile-card-inner">
